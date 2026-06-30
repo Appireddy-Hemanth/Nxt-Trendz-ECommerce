@@ -1,0 +1,231 @@
+.filters-group-container {
+  margin-top: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .filters-group-container {
+    width: 250px;
+    flex-shrink: 0;
+    margin-top: 48px;
+  }
+}
+
+.search-input-container {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  margin-bottom: 24px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  z-index: 50;
+  margin-top: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestion-item {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: 14px;
+}
+
+.suggestion-item:hover {
+  background: var(--bg-secondary);
+  color: var(--accent-primary);
+}
+
+.suggestion-icon {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.search-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: 14px;
+}
+
+.search-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.voice-search-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.voice-search-btn:hover {
+  background: rgba(0, 240, 255, 0.1);
+}
+
+.voice-search-btn.listening {
+  animation: pulse 1s infinite;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.search-icon {
+  color: var(--text-secondary);
+}
+
+.category-heading {
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.categories-list {
+  padding-left: 0;
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.category-item {
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.category-name {
+  color: var(--text-secondary);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  margin: 0;
+  transition: color var(--transition-fast);
+}
+
+.category-name:hover {
+  color: var(--accent-primary);
+}
+
+.active-category-name {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.rating-heading {
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.ratings-list {
+  padding-left: 0;
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.rating-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.rating-image {
+  height: 16px;
+  width: 80px;
+  margin-right: 8px;
+}
+
+.and-up {
+  color: var(--text-secondary);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  margin: 0;
+  transition: color var(--transition-fast);
+}
+
+.rating-item:hover .and-up {
+  color: var(--accent-primary);
+}
+
+.active-rating {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.clear-filters-btn {
+  color: var(--accent-primary);
+  background-color: transparent;
+  border: 1px solid var(--border-glow);
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+  transition: all var(--transition-base);
+}
+
+.clear-filters-btn:hover {
+  background-color: rgba(0, 240, 255, 0.1);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Price Range Slider */
+.price-filter-container {
+  margin-bottom: 32px;
+}
+
+.price-slider {
+  width: 100%;
+  cursor: pointer;
+  accent-color: var(--accent-primary);
+}
+
+.price-value {
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  margin-top: 8px;
+  font-weight: 500;
+}

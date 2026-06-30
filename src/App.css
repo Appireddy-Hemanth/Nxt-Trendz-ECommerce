@@ -1,0 +1,429 @@
+/* =============================================
+   NXT TRENDZ — GLOBAL DESIGN SYSTEM
+   Dark Mode + Lightning Theme
+   ============================================= */
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+  /* Backgrounds */
+  --bg-primary: #0a0a1a;
+  --bg-secondary: #0f0f23;
+  --bg-tertiary: #13132b;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card-hover: rgba(255, 255, 255, 0.07);
+  --bg-glass: rgba(15, 15, 35, 0.7);
+  --bg-glass-light: rgba(255, 255, 255, 0.05);
+
+  /* Accent Colors */
+  --accent-primary: #00f0ff;
+  --accent-secondary: #a855f7;
+  --accent-gold: #fbbf24;
+  --accent-blue: #3b82f6;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+
+  /* Text Colors */
+  --text-primary: #f0f0ff;
+  --text-secondary: #a0a0c0;
+  --text-muted: #606080;
+  --text-accent: #00f0ff;
+
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(0, 240, 255, 0.3);
+  --border-purple: rgba(168, 85, 247, 0.3);
+
+  /* Shadows */
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 40px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.8);
+  --shadow-glow: 0 0 30px rgba(0, 240, 255, 0.2);
+  --shadow-glow-purple: 0 0 30px rgba(168, 85, 247, 0.3);
+  --shadow-glow-gold: 0 0 20px rgba(251, 191, 36, 0.3);
+
+  /* Typography */
+  --font-primary: 'Inter', 'Roboto', sans-serif;
+  --font-heading: 'Outfit', 'Inter', sans-serif;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.4s ease;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+body.light-theme {
+  /* Backgrounds */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --bg-card-hover: rgba(255, 255, 255, 1);
+  --bg-glass: rgba(255, 255, 255, 0.8);
+  --bg-glass-light: rgba(248, 250, 252, 0.8);
+
+  /* Accent Colors (Keep original pop, adjust for contrast if needed) */
+  --accent-primary: #0ea5e9;
+  --accent-secondary: #8b5cf6;
+  --accent-gold: #eab308;
+  --accent-blue: #2563eb;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+
+  /* Text Colors */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-accent: #0ea5e9;
+
+  /* Borders */
+  --border-subtle: rgba(15, 23, 42, 0.1);
+  --border-glow: rgba(14, 165, 233, 0.3);
+  --border-purple: rgba(139, 92, 246, 0.3);
+
+  /* Shadows */
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 20px rgba(14, 165, 233, 0.2);
+  --shadow-glow-purple: 0 0 20px rgba(139, 92, 246, 0.2);
+  --shadow-glow-gold: 0 0 15px rgba(234, 179, 8, 0.2);
+}
+
+/* ---------- Global Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Fancy dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.3);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.6);
+}
+
+/* ---------- Keyframe Animations ---------- */
+
+/* Lightning flash across the page */
+@keyframes lightningFlash {
+  0%, 90%, 100% { opacity: 0; }
+  92%, 96% { opacity: 1; }
+  94% { opacity: 0.6; }
+}
+
+/* Electric glow pulse */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3),
+                0 0 20px rgba(0, 240, 255, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.6),
+                0 0 40px rgba(0, 240, 255, 0.3),
+                0 0 60px rgba(0, 240, 255, 0.1);
+  }
+}
+
+/* Purple glow pulse */
+@keyframes glowPulsePurple {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.3),
+                0 0 20px rgba(168, 85, 247, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.6),
+                0 0 50px rgba(168, 85, 247, 0.3);
+  }
+}
+
+/* Shimmer loading skeleton */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+/* Entrance: fade up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Entrance: fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Staggered slide in from left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Bounce (for cart badge) */
+@keyframes badgeBounce {
+  0%, 100% { transform: scale(1); }
+  30% { transform: scale(1.4); }
+  60% { transform: scale(0.9); }
+}
+
+/* Shake (for error) */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+/* Float up-down */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Electric spark travel */
+@keyframes sparkTravel {
+  0% { transform: translate(0, 0) scale(0); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translate(var(--tx, 80px), var(--ty, -80px)) scale(1.5); opacity: 0; }
+}
+
+/* Gradient shift */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Text glow flicker */
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5),
+                 0 0 20px rgba(0, 240, 255, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.9),
+                 0 0 40px rgba(0, 240, 255, 0.5),
+                 0 0 60px rgba(0, 240, 255, 0.2);
+  }
+}
+
+/* Toast slide in */
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes toastSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%) scale(0.9);
+  }
+}
+
+/* Progress bar */
+@keyframes progressBar {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+/* Glitch effect */
+@keyframes glitch1 {
+  0%, 100% { clip-path: inset(0 0 95% 0); transform: translate(-4px, 0); }
+  20% { clip-path: inset(20% 0 60% 0); transform: translate(4px, 0); }
+  40% { clip-path: inset(50% 0 30% 0); transform: translate(-4px, 0); }
+  60% { clip-path: inset(70% 0 10% 0); transform: translate(4px, 0); }
+  80% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 0); }
+}
+
+@keyframes glitch2 {
+  0%, 100% { clip-path: inset(80% 0 5% 0); transform: translate(4px, 0); }
+  20% { clip-path: inset(10% 0 70% 0); transform: translate(-4px, 0); }
+  40% { clip-path: inset(60% 0 25% 0); transform: translate(4px, 0); }
+  60% { clip-path: inset(30% 0 55% 0); transform: translate(-4px, 0); }
+  80% { clip-path: inset(5% 0 80% 0); transform: translate(2px, 0); }
+}
+
+/* Spin */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Scale in */
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Lightning bolt drawing */
+@keyframes boltDraw {
+  0% { stroke-dashoffset: 300; opacity: 0; }
+  10% { opacity: 1; }
+  50% { stroke-dashoffset: 0; opacity: 1; }
+  70%, 100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+/* ---------- Utility Classes ---------- */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+}
+
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+.glass-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
+}
+
+.glow-text {
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shimmer-loading {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 1.8s infinite linear;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0967d2, #00f0ff 150%);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 240, 255, 0.4);
+}
+
+.btn-primary > span,
+.btn-primary > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =============================================
+   FLY TO CART ANIMATION
+   ============================================= */
+.fly-to-cart-img {
+  position: fixed;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 240, 255, 0.6);
+  border: 2px solid var(--accent-primary);
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cart-count-badge.pop-animation {
+  animation: badgePop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes badgePop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); background-color: var(--accent-primary); }
+  100% { transform: scale(1); }
+}

@@ -1,0 +1,180 @@
+.style-matcher-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+.style-matcher-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.style-matcher-content h2 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.style-matcher-content p {
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.card-stack-container {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin-bottom: 40px;
+  perspective: 1000px;
+}
+
+.swipe-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid var(--border-subtle);
+  touch-action: none;
+  cursor: grab;
+  user-select: none;
+  overflow: hidden;
+}
+
+.swipe-card:active {
+  cursor: grabbing;
+}
+
+.swipe-card img {
+  width: 100%;
+  height: 85%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  pointer-events: none;
+}
+
+.card-title {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+.stamp {
+  position: absolute;
+  top: 40px;
+  padding: 8px 16px;
+  border: 4px solid;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 800;
+  text-transform: uppercase;
+  transform: rotate(-15deg);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.stamp.like {
+  right: 20px;
+  color: #10b981;
+  border-color: #10b981;
+  transform: rotate(15deg);
+}
+
+.stamp.nope {
+  left: 20px;
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+.swipe-actions {
+  display: flex;
+  gap: 24px;
+}
+
+.action-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+}
+
+.action-btn.nope {
+  background: var(--bg-tertiary);
+  color: #ef4444;
+}
+
+.action-btn.like {
+  background: var(--bg-tertiary);
+  color: #10b981;
+}
+
+.matcher-results {
+  animation: fadeIn 0.5s ease;
+}
+
+.liked-items-preview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px 0;
+}
+
+.liked-items-preview img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--accent-primary);
+}
+
+.shop-now-btn {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.shop-now-btn:hover {
+  transform: scale(1.05);
+}

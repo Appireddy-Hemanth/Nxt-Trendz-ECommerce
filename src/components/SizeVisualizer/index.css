@@ -1,0 +1,223 @@
+.size-visualizer-container {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin: 32px 0;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+}
+
+.visualizer-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.visualizer-title::before {
+  content: '📐';
+}
+
+.visualizer-content {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .visualizer-content {
+    flex-direction: column;
+  }
+}
+
+.visualizer-controls {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gender-toggle {
+  display: flex;
+  gap: 12px;
+}
+
+.gender-btn {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gender-btn.active {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+}
+
+.slider-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.slider-group label {
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.custom-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: var(--bg-tertiary);
+  border-radius: 3px;
+  outline: none;
+}
+
+.custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+  transition: transform 0.1s;
+}
+
+.custom-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.fit-recommendation {
+  margin-top: 16px;
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.05), rgba(168, 85, 247, 0.05));
+  border-left: 4px solid var(--accent-primary);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.fit-recommendation h3 {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.fit-recommendation h3 span {
+  color: var(--accent-primary);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.fit-recommendation p {
+  font-family: var(--font-secondary);
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+/* Display Canvas */
+.visualizer-display {
+  flex: 1;
+  height: 300px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  border: 1px dashed var(--border-subtle);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: 1;
+}
+
+.silhouette-container {
+  height: 250px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.silhouette {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Basic abstract body shapes using CSS */
+.head {
+  width: 30px;
+  height: 40px;
+  background: var(--text-tertiary);
+  border-radius: 50% 50% 40% 40%;
+  margin-bottom: 4px;
+  opacity: 0.5;
+}
+
+.torso {
+  width: 70px;
+  height: 90px;
+  background: var(--text-secondary);
+  border-radius: 10px 10px 0 0;
+  position: relative;
+}
+
+.legs {
+  width: 70px;
+  height: 110px;
+  background: var(--text-tertiary);
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 55% 100%, 50% 20%, 45% 100%, 15% 100%);
+  opacity: 0.5;
+}
+
+/* Female variant adjustments */
+.female .torso {
+  width: 60px;
+  border-radius: 20px 20px 0 0;
+  clip-path: polygon(0 0, 100% 0, 85% 50%, 100% 100%, 0 100%, 15% 50%);
+}
+.female .legs {
+  width: 80px;
+}
+
+/* T-Shirt overlay */
+.tshirt-overlay {
+  position: absolute;
+  top: 0;
+  left: -10px;
+  right: -10px;
+  height: 100px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  clip-path: polygon(20% 0%, 80% 0%, 100% 30%, 85% 35%, 80% 100%, 20% 100%, 15% 35%, 0 30%);
+  opacity: 0.8;
+  mix-blend-mode: screen;
+}

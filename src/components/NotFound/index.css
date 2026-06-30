@@ -1,0 +1,151 @@
+/* ===== NOT FOUND (404) ===== */
+
+.not-found-container {
+  background: var(--bg-primary);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.not-found-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.not-found-orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.12), transparent 70%);
+  border-radius: 50%;
+  animation: glowPulsePurple 5s ease-in-out infinite;
+}
+
+.not-found-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  animation: fadeInUp 0.8s ease both;
+}
+
+/* ---- Glitch 404 ---- */
+.not-found-code {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.not-found-code-base,
+.not-found-code-glitch1,
+.not-found-code-glitch2 {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 140px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -4px;
+}
+
+@media screen and (min-width: 768px) {
+  .not-found-code-base,
+  .not-found-code-glitch1,
+  .not-found-code-glitch2 {
+    font-size: 200px;
+  }
+}
+
+.not-found-code-base {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.not-found-code-glitch1,
+.not-found-code-glitch2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-text-fill-color: transparent;
+}
+
+.not-found-code-glitch1 {
+  background: linear-gradient(135deg, #ff006e, #8338ec);
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: glitch1 3s infinite linear alternate-reverse;
+  opacity: 0.7;
+}
+
+.not-found-code-glitch2 {
+  background: linear-gradient(135deg, var(--accent-primary), #ff006e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: glitch2 3s infinite linear alternate-reverse;
+  opacity: 0.5;
+}
+
+/* ---- Lightning emoji ---- */
+.not-found-bolt {
+  font-size: 48px;
+  animation: float 2.5s ease-in-out infinite;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.8));
+}
+
+.not-found-heading {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .not-found-heading {
+    font-size: 36px;
+  }
+}
+
+.not-found-description {
+  font-family: var(--font-primary);
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 400px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.not-found-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #0967d2, #00d4ff);
+  color: #fff;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.not-found-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5),
+              0 0 60px rgba(0, 212, 255, 0.15);
+}

@@ -1,0 +1,41 @@
+.promo-banner-container {
+  width: 100%;
+  background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  z-index: 10;
+  box-shadow: var(--shadow-sm);
+}
+
+.promo-marquee {
+  display: inline-block;
+  animation: marquee 30s linear infinite;
+}
+
+.promo-text {
+  color: #fff;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 40px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.promo-code {
+  font-family: var(--font-heading);
+  background: rgba(255,255,255,0.2);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 1px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

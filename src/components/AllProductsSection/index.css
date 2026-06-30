@@ -1,0 +1,128 @@
+/* ===== ALL PRODUCTS SECTION ===== */
+
+.all-products-section {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0 80px;
+}
+
+@media screen and (min-width: 768px) {
+  .all-products-section {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 20px 0 80px;
+  }
+}
+
+/* ---- Products Main Area ---- */
+.all-products-container {
+  flex: 1;
+  min-width: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .all-products-container {
+    margin-left: 0;
+  }
+}
+
+/* ---- Products Grid ---- */
+.products-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  animation: fadeInUp 0.5s ease both;
+}
+
+/* ---- Loader ---- */
+.products-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  flex: 1;
+}
+
+/* ---- No Products ---- */
+.no-products-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  flex: 1;
+  text-align: center;
+}
+
+.no-products-img {
+  width: 200px;
+  opacity: 0.5;
+  filter: grayscale(0.5);
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .no-products-img {
+    width: 320px;
+  }
+}
+
+.no-products-heading {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.no-products-description {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 360px;
+  line-height: 1.6;
+}
+
+/* ---- Error View ---- */
+.products-error-view-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+  flex: 1;
+}
+
+.products-failure-img {
+  width: 240px;
+  opacity: 0.6;
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .products-failure-img {
+    width: 360px;
+  }
+}
+
+.product-failure-heading-text {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.products-failure-description {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 360px;
+  line-height: 1.6;
+}

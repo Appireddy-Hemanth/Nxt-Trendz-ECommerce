@@ -1,0 +1,55 @@
+/* ===== PRIME DEALS SECTION ===== */
+
+.primedeals-list-heading {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 40px 0 20px;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .primedeals-list-heading {
+    font-size: 28px;
+    padding: 0;
+    margin: 48px auto 24px;
+    max-width: 1200px;
+    width: 90%;
+  }
+}
+
+/* Use the same .products-list grid from AllProductsSection */
+.primedeals-list-heading + .products-list {
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .primedeals-list-heading + .products-list {
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.register-prime-image {
+  display: block;
+  margin: 40px auto;
+  max-width: 90%;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  opacity: 0.9;
+  transition: opacity var(--transition-base);
+}
+
+.register-prime-image:hover {
+  opacity: 1;
+}
+
+.primedeals-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}

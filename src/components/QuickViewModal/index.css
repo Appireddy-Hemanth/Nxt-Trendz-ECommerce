@@ -1,0 +1,238 @@
+.quickview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.quickview-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quickview-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  color: var(--text-primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--transition-fast);
+}
+
+.quickview-close:hover {
+  background: var(--bg-secondary);
+  color: var(--accent-primary);
+  transform: rotate(90deg);
+}
+
+.quickview-content {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .quickview-content {
+    flex-direction: row;
+  }
+}
+
+.quickview-img-wrapper {
+  width: 100%;
+  padding: 24px;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .quickview-img-wrapper {
+    width: 45%;
+    padding: 32px;
+  }
+}
+
+.quickview-img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.quickview-img:hover {
+  transform: scale(1.05);
+}
+
+.quickview-details {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .quickview-details {
+    width: 55%;
+  }
+}
+
+.quickview-title {
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  line-height: 1.2;
+}
+
+.quickview-price {
+  color: var(--accent-primary);
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+
+.quickview-rating-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.quickview-rating {
+  background-color: var(--accent-primary);
+  color: #000;
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.quickview-rating p {
+  margin: 0;
+}
+
+.quickview-reviews {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 0;
+}
+
+.quickview-desc {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+}
+
+.quickview-brand {
+  color: var(--text-primary);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.brand-label {
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-right: 8px;
+  display: inline-block;
+  width: 70px;
+}
+
+.quickview-divider {
+  border: 0;
+  border-top: 1px solid var(--border-subtle);
+  margin: 24px 0;
+  width: 100%;
+}
+
+.quickview-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.quantity-controller {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.qty-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.qty-btn:hover {
+  background: var(--bg-card);
+  color: var(--accent-primary);
+}
+
+.qty-value {
+  margin: 0;
+  width: 40px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.quickview-add-cart-btn {
+  flex: 1;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-blue));
+  color: #000;
+  border: none;
+  padding: 14px 24px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  min-width: 150px;
+}
+
+.quickview-add-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
